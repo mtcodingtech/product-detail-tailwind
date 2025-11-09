@@ -4,9 +4,9 @@ import { productImages } from "../data/dummyData";
 function ProductImage() {
   const [selectedImg, setSelectedImg] = useState(productImages[0].url);
   return (
-    <div className=" w-sm mx-auto">
+    <div className="">
       <img src={selectedImg} alt="img" className="w-full rounded-xl" />
-      <div className="flex gap-6 mt-6">
+      <div className="flex gap-6 mt-6 justify-between">
         {productImages.map((item, index) => {
           return (
             <div
@@ -15,7 +15,7 @@ function ProductImage() {
             >
               <img
                 src={item.thumbnail}
-                className="rounded-lg w-20 h-20 object-cover border-Orange border-2"
+                className="rounded-lg aspect-square object-cover border-Orange border-2"
                 alt="img"
               />
             </div>

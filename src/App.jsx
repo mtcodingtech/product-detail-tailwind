@@ -12,14 +12,14 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMenu = (isOpen) => {
-    setShowMenu(isOpen)
-  }
+    setShowMenu(isOpen);
+  };
   return (
     <>
       <div className="relative">
         <div className="max-w-6xl mx-auto">
-          <Navbar menuFunc={handleMenu}  />
-          <div className="grid grid-cols-2 my-20">
+          <Navbar menuFunc={handleMenu} />
+          <div className="grid grid-col-1 lg:grid-cols-2 my-20 w-full px-5 lg:px-0 lg:w-4xl mx-auto gap-22">
             <ProductImage />
             <ProductInfo />
           </div>
@@ -28,11 +28,13 @@ function App() {
           <div className="w-[70%] h-screen bg-amber-200 absolute top-0 p-5">
             <img onClick={() => handleMenu(false)} src={close} alt="close" />
             <ul className="mt-15 grid gap-5 text-xl">
-              {
-                navItems.map((navItem, index) => {
-                 return <li key={index} className="text-Black font-bold">{navItem.title}</li>
-                })
-              }
+              {navItems.map((navItem, index) => {
+                return (
+                  <li key={index} className="text-Black font-bold">
+                    {navItem.title}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
